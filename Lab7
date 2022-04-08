@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+/*1 задание*/    
+    <script>
+        let a = 20;
+        let b = 7;
+        let d = a%b;
+        document.write(d+'<br>');
+        if (a%b==0) document.write('Делится '+(a/b)+"<br>");
+        else document.write('Делится с остатком '+d+"<br>");
+        let st = Math.pow(2, 19);
+        document.write(st+'<br>');
+        document.write(Math.sqrt(245)+'<br>');
+        let mass =[4, 2, 5, 19, 13, 0, 10];
+        let sum =0;
+        for(let i=0; i<mass.length; i++)
+        {
+            sum+=Math.pow(mass[i], 3);
+        }
+        document.write(Math.sqrt(sum)+'<br>');
+        let kor = Math.sqrt(222);
+        document.write(Math.round(kor)+'<br>');
+        document.write(kor.toFixed(1)+'<br>');
+        document.write(kor.toFixed(2)+'<br>');
+        let round = {floor:(Math.floor(Math.sqrt(111*19))), ceil:(Math.ceil(Math.sqrt(111*19)))};
+        for(let elem in round) document.write(round[elem]+' ');
+        document.write('<br>');
+        let numbers =[4, -2, 5, 19, -130, 0, 10];
+        document.write(Math.min(...numbers)+' '+Math.max(...numbers)+'<br>');
+        function getRandomArbitrary(min, max) {
+                return Math.random() * (max - min) + min;
+              }
+        min=1;
+        max=200;
+        zn=getRandomArbitrary(min, max);
+        document.write(zn);
+        let rand = [];
+        for(let i=0; i<10; i++)
+        {
+            rand[i] = Math.round(getRandomArbitrary(min, max));
+        }
+        document.write(rand+'<br>');
+        document.write(Math.abs(a-b)+'<br>');
+        c = Math.abs(a-b);
+        document.write(c);
+    </script> 
+/*2 задание*/
+    <div class ="elem"> 
+        <p> 1</p>
+        <p> 2 </p>
+        <p> 3 </p>
+        <p> 4 </p>
+    </div>
+    <script>           
+        const elem = document.querySelector('.elem');
+        elem.firstElementChild.style.color = 'red';
+        elem.lastElementChild.style.color = 'red';
+        const elems = elem.children;
+        for (let i = 0; i < elems.length; i += 1) {
+            elems[i].innerHTML = `${elems[i].innerHTML}!`;
+        }
+    </script> 
+/*3 задание*/
+        <div>
+            <p>hello</p>
+            <p class="elem1">Hi</p>
+            <p>hell</p>
+            <p>heaven</p>
+        </div>
+        <script>
+            var elem = document.querySelector('.elem1');
+            elem1.previousElementSibling.innerHTML += '!';
+            elem1.nextElementSibling.innerHTML += '!';
+            elem1.nextElementSibling.nextElementSibling.innerHTML += '!';
+        </script>
+/*4 задание*/
+<ol id = "_list"> List
+    <li>null_1</li>
+    <li>null_2</li>
+    <li>null_3</li>    
+</ol>
+<div>
+Parent
+    <ul> List2
+        <li>1</li>
+        <li>2</li>
+    </ul>
+<div>
+<script>
+    var noll = document.querySelector('ol li');
+    noll.parentElement.style.cssText = "color: red;";
+    for( i = 0; i < noll.parentElement.children.length; i++){
+        noll.parentElement.children[i].style.cssText = "color: #000000;"
+    };
+    var child = document.querySelector('div ul li');
+    var parent = child.parentElement;
+    parent.parentElement.style.cssText = "color: red;"
+    for( i = 0; i < parent.parentElement.children.length; i++){
+        parent.parentElement.children[i].style.cssText = "color: #000000;"
+    } 
+    </script>     
+/*5 задание*/
+<div class="parent">
+    Elem 5
+    <br>
+    <span class="child">55</span>
+</div>
+<input type="button" value="delete" onclick="del(this)" class="knopka">
+<hr>
+<ol class="list">
+    <li> 1</li>
+    <li> 2</li>
+    <li> 3</li>
+</ol>
+<input type="button" value="removeChild" class="btn" onclick="remove(this)">
+<hr>
+<input type="button" value="Push" class="button" onclick="del2(this)" >
+<hr>
+<ol class="task30">
+    <li class="task301">1</li>
+    <li class="task301">2</li>
+    <li class="task301">3</li>
+</ol>
+<hr>
+<input type="text" id="id31">
+<input type="button" value="clone" class="btn31" onclick="func31(this)">  
+<script>
+    const btn = document.querySelector('.knopka');
+    const parent = document.querySelector('.parent');
+    const child = document.querySelector('.child');
+    function del() {
+        parent.removeChild(child);
+    }
+    const Btn = document.querySelector('.btn');
+    const Ol = document.querySelector('.list');
+    const Last = Ol.lastElementChild;
+    function remove() {
+        Ol.removeChild(Last);
+    }  
+    const button = document.querySelector('.button');
+    function del2() {
+        const Parent = button.parentElement;
+        Parent.removeChild(button);
+    }
+    const getLiList30 = document.querySelectorAll('.task301');
+    for (let i = 0; i < getLiList30.length; i += 1) {
+        getLiList30[i].addEventListener('click', func30);
+    }
+    function func30() {
+        const getParent30 = this.parentElement;
+        getParent30.removeChild(this);
+    }
+    const Input = document.getElementById('id31');
+    const Btn31 = document.querySelector('.btn31');
+    Parent = Input.parentElement;
+    function func31() {
+        const clone31 = Input.cloneNode(true);
+        Parent.appendChild(clone31);
+    }
+</script> 
+/*6 задание*/
+<input class="test1" type="text" value="JS ninja">
+<button id="clonm">+</button> 
+<script>
+var clonm = document.getElementsByTagName("input")[0];
+            clonm.addEventListener("click", func);
+            function func() {
+               let parent=clonm.parentElement;
+               let input=document.createElement('input');
+               parent.appendChild(input);
+             }
+</script>
+</html>
